@@ -1,0 +1,29 @@
+from tkinter import Tk, Label, Button
+
+root = Tk()
+root.title("Выбор композиции букета")
+
+def select_composition(composition):
+    if composition == "Розы":
+        result_label.config(text="Вы выбрали композицию с розами")
+    elif composition == "Тюльпаны":
+        result_label.config(text="Вы выбрали композицию с тюльпанами")
+    elif composition == "Лилии":
+        result_label.config(text="Вы выбрали композицию с лилиями")
+
+instruction_label = Label(root, text="Выберите тип композиции букета:")
+instruction_label.pack()
+
+button1 = Button(root, text="Розы", command=lambda: select_composition("Розы"))
+button1.pack()
+
+button2 = Button(root, text="Тюльпаны", command=lambda: select_composition("Тюльпаны"))
+button2.pack()
+
+button3 = Button(root, text="Лилии", command=lambda: select_composition("Лилии"))
+button3.pack()
+
+result_label = Label(root, text="Now im litle motivated")
+result_label.pack()
+
+root.mainloop()
